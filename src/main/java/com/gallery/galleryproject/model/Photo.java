@@ -11,5 +11,5 @@ public class Photo {
 
     @Getter
     @Setter
-    private int quality;
+    private int quality,id;
 }
