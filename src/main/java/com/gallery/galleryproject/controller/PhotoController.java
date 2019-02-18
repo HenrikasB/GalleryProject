@@ -4,6 +4,8 @@ import com.gallery.galleryproject.model.Photo;
 import com.gallery.galleryproject.service.PhotoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,25 +19,32 @@ public class PhotoController {
         this.photoService = photoService;
     }
 
-    /*NOT SURE ABOUT THIS ONE(1)*/
-    /*From this RequestMapping I have to display all information from fields which were filled by user*/
-
-    @RequestMapping(value = "/photo", method = RequestMethod.GET)
-    public String displayPhoto(Model model) {
-        /*From PhotoService I believe I have to collect all data with .getId and etc*/
-        Photo photo = new PhotoService().displayPhotos();
-        model.addAttribute("photo", photo);
-        return "photo";
+    /**
+     * This controller should return FORM for adding photo.
+     *
+     * @param model
+     * @return
+     */
+    @RequestMapping(value = "/addPhotoPage", method = RequestMethod.GET)
+    public String getPhotoFormPage(Model model) {
+        // this will stick empty object with form, so user can populate that object
+        // and pass it back to backend
+        model.addAttribute("photo", new Photo());
+        return "addPhotoPage";
     }
 
-    /*NOT SURE ABOUT THIS ONE(2)*/
-    /*From this RequestMapping I will send the all collected data from /photo page to value = "/gallery
-    * but what methods in PhotoService I need to use? I'm kinda lost with this one,
-    * because in GalleryController I'll display everything, so it means that first I have to send something to display
-    * ANOTHER QUESTION. What if my gallery is empty? */
+    /**
+     * This controller receives request containing photo. Then it calls service to save it.
+     *
+     * @param photo
+     * @return
+     */
     @RequestMapping(value = "/photo", method = RequestMethod.POST)
-    public String sendPhoto(Model model) {
+    public String uploadPhoto(@ModelAttribute Photo photo) {
 
-        return "gallery.html";
+        photoService.savePhoto(photo);
+
+        // after successful "save" return user to the main page
+        return "main";
     }
 }

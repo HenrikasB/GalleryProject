@@ -19,7 +19,7 @@ public class GalleryController {
 
 
     @RequestMapping(value = "/gallery", method = RequestMethod.GET)
-    public String listOfObjects(Model model) {
+    public String returnAllPhotos(Model model) {
         /*
         * If I create photo.setId for example Ill see in /gallery page.
         * So this means that with this .getAllPhotos I'll receive later all information from /gallery page

@@ -11,4 +11,14 @@ public class PhotoService {
 
         return photos;
     }
+
+    public void savePhoto(Photo photo) {
+        // for now all photos will have same id
+        photo.setId(1);
+
+        // this is simulation of saving, later on we will implement logic for actual save
+        System.out.println("Saving photo...");
+        System.out.println(photo);
+        System.out.println("Photo saved.");
+    }
 }
