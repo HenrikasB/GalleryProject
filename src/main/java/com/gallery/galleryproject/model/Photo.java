@@ -2,9 +2,10 @@ package com.gallery.galleryproject.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
+@ToString
 public class Photo {
-    // TODO: create class with all required fields, except actual photo
     @Getter
     @Setter
     private String name, tag;
@@ -12,4 +13,5 @@ public class Photo {
     @Getter
     @Setter
     private int quality, id;
+
 }

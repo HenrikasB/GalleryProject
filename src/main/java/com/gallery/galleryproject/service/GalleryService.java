@@ -5,14 +5,14 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class GalleryService {
-    // TODO: create method getAllPhotos() which will create a list of populated photos objects
-
+/*Here I can create with setter a new photo in gallery for example, but as I understand I dont need to create it here
+* I need to get the generated information from PhotoService which will be sent by PhotoController*/
     public Photo getAllPhotos() {
-
         Photo photo = new Photo();
-
-
+        photo.setId(999);
+        photo.setName("Test");
+        photo.setTag("testTag");
+        photo.setQuality(100);
         return photo;
-
     }
 }
