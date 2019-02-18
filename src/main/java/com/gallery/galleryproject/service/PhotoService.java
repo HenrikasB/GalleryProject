@@ -4,15 +4,10 @@ import com.gallery.galleryproject.model.Photo;
 import org.springframework.stereotype.Service;
 
 @Service
-public class GalleryService {
-    // TODO: create method getAllPhotos() which will create a list of populated photos objects
-
-    public Photo getAllPhotos() {
-
+public class PhotoService {
+    public Photo displayPhotos() {
         Photo photo = new Photo();
-
-
+        photo.setId(9999);
         return photo;
-
     }
 }

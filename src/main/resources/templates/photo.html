@@ -1,0 +1,27 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome</title>
+</head>
+<body >
+<nav>
+    <div>
+        <h2 style="text-align: center">Fill all the fields</h2>
+    </div>
+</nav>
+<section>
+    <form action="#" th:action="@{/gallery}" th:object="${photo}" method="POST">
+        <p>Enter ID: </p> <input type="number"><br>
+        <p>Enter photo name: </p> <input type="text"><br>
+        <p>Enter photo tag: </p> <input type="text"><br>
+        <p>Enter photo quallity:</p> <input type="number"><br>
+        <!--Cia dar turi buti upload photo-->
+        <input type="submit" value="Submit"> <input type="reset" value="Cancel">
+    </form>
+</section>
+</body>
+</html>

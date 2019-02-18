@@ -17,7 +17,7 @@ public class GalleryController {
         this.galleryService = galleryService;
     }
 
-    @RequestMapping(value = "/gallery", method = RequestMethod.GET)
+    @RequestMapping(value = "/gallery", method = RequestMethod.POST)
     public String listOfObjects(Model model) {
         Photo photo = galleryService.getAllPhotos();
         model.addAttribute("photo", photo);
