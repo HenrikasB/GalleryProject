@@ -3,10 +3,12 @@ package com.gallery.galleryproject.service;
 import com.gallery.galleryproject.model.Photo;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 @Service
 public class PhotoService {
+    public ArrayList<Photo> photoList = new ArrayList<Photo>();
 
     public Photo displayPhotos() {
         Photo photos = new Photo();
@@ -20,12 +22,13 @@ public class PhotoService {
     }
 
     public void savePhoto(Photo photo) {
-        // for now all photos will have same id
-        photo.setId(generateRandomId());
 
+        // for now all photos will have same id
         // this is simulation of saving, later on we will implement logic for actual save
         System.out.println("Saving photo...");
-        System.out.println(photo);
+        photo.setId(generateRandomId());
+        photoList.add(photo);
+        System.out.println(photoList);
         System.out.println("Photo saved.");
     }
 }

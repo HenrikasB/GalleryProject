@@ -24,7 +24,7 @@ public class GalleryController {
         * If I create photo.setId for example Ill see in /gallery page.
         * So this means that with this .getAllPhotos I'll receive later all information from /gallery page
         */
-        Photo photo = galleryService.getAllPhotos();
+        Photo photo = (Photo) galleryService.getAllPhotos();
         model.addAttribute("photo", photo);
         return "gallery.html";
     }

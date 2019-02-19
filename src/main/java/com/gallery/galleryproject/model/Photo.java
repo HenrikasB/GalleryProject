@@ -1,10 +1,10 @@
 package com.gallery.galleryproject.model;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class Photo {
     @Getter
     @Setter
