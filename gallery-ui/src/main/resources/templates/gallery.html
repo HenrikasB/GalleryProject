@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery</title>
+</head>
+<body>
+<nav>
+    <div>
+        <h2 style="text-align: center">Take a look..</h2>
+        <!-- TODO: implement here with thymeleaf for loop printing all photo objects received from backend -->
+    </div>
+</nav>
+<section>
+    <div class="container">
+        <div class="display-galery" style="padding-left: 30px">
+            <tr th:each="photos: ${photo}"></tr>
+            <td th:text="${photo.name}"></td>
+<!--            <p>Id of the photo: <i th:text="${photo.id}"></i></p>
+            <p>Name of the photo: <i th:text="${photo.name}"></i></p>
+            <p>Tag of the photo: <i th:text="${photo.tag}"></i></p>
+            <p>Quality of the photo: <i th:text="${photo.quality}"></i></p>-->
+        </div>
+    </div>
+</section>
+</body>
+</html>
