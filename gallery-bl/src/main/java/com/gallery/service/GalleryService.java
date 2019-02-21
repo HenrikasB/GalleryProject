@@ -31,6 +31,8 @@ public class GalleryService {
 ////        to list
 //        photoArray.add(photo);
 
+
+        /*Why everything works with almost empty code here? :D*/
         return photoArray;
     }
 }

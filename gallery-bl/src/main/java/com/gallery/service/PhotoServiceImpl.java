@@ -48,5 +48,7 @@ public class PhotoServiceImpl implements PhotoService {
         log.info("Saving photo");
 
         return photoRepository.save(photo);
+
+        /*why also this sheet works*/
     }
 }

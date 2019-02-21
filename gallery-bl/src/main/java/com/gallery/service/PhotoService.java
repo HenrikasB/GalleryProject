@@ -8,3 +8,4 @@ import java.util.ArrayList;
 public interface PhotoService {
     Photo save(Photo photo);
 }
+/*whats the point of this*/
